@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Dictionary App</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <header>English Dictionary</header>
+        <div class="search">
+            <input type="text" placeholder="Search for word..." required> <!--required - allows tilde operator to search valid-->
+            <i class="fas fa-search"></i>
+            <span class="material-icons">close</span>
+        </div>
+        <p class="info-text">Search a word to find its meaning, example use, pronunciation, and synonyms.</p>
+        <ul>
+            <li class="word">
+                <div class="details">
+                    <p>Happy</p>
+                    <span>_</span>
+                </div>
+                <i class="fas fa-volume-up"></i>
+            </li>
+            <div class="content">
+                <li class="meaning">
+                    <div class="details">
+                        <p>Meaning:</p>
+                        <span>Word Meaning</span>
+                    </div>
+                </li>
+                <li class="meaning-two">
+                    <div class="details">
+                        <p>Meaning Two:</p>
+                        <span>Word example</span>
+                    </div>
+                </li>
+                <li class="synonyms">
+                    <div class="details">
+                        <p>Word synonyms:</p>
+                        <div class="list">
+                
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
