@@ -111,7 +111,7 @@ margin: -3px 0 -10px;
     transition: all 0.2s ease;
 }
 
-.wrapper.active ul {
+.wrapper.active ul { /* Display ul if word is found */
     opacity: 1;
     height: 303px;
 }
@@ -181,4 +181,8 @@ ul.content::-webkit-scrollbar {
 .synonyms .details .list span {
     margin-right: 5px;
     text-decoration: underline;
+}
+
+.meaning {
+    display: block;
 }

@@ -3,6 +3,7 @@ searchInput = wrapper.querySelector("input"), //find the input element in the wr
 synonyms = wrapper.querySelector(".synonyms .list"),
 infoText = wrapper.querySelector(".info-text"),
 volumeIcon = document.querySelector('.word i');
+
 let audio; //declare audio variable
 
 // event listeners
@@ -39,8 +40,18 @@ function data(result, word) {
         console.log(result); // check result in log
 
         wrapper.classList.add('active'); // if word exists, 'active' class added to wrapper
-        let definitions = result[0].meanings[0].definitions[0];
-        let definitions2 = result[0].meanings[1].definitions[0];
+        
+        // loop through each result. and for each result, find div with .meanings, and append result to html. 
+        result.forEach(resultItem => {
+            
+            resultItem.meanings.forEach(meaning => { // notice hierarchy of objects corresponding to API data structure.
+                
+                meaning.definitions.forEach(definition => {
+                    document.querySelector(".meanings").innerHTML += `<span class="meaning">${definition.definition}</span>`;
+                });
+            });
+        });
+
         phonetics = `${result[0].meanings[0].partOfSpeech} /${result[0].phonetics[0].text}/`;
 
         // pass API data to html elements
@@ -49,8 +60,7 @@ function data(result, word) {
 
         document.querySelector(".word p").innerText = result[0].word;
         document.querySelector(".word span").innerText = phonetics;
-        document.querySelector(".meaning span").innerHTML = definitions.definition;
-        document.querySelector(".meaning-two span").innerHTML = definitions2.definition;
+        
         audio = new Audio(result[0].phonetics[0].audio); // new audio obj with audio source
         
             if(result[0].meanings[0].synonyms[0] == undefined) {
