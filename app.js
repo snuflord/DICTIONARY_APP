@@ -11,6 +11,7 @@ let audio; //declare audio variable
 searchInput.addEventListener("keyup", e => { // on key up, function:
     if(e.key === "Enter" && e.target.value) { // if event listener key event is Enter and it has a value:
         fetchApi(e.target.value); // fetch api function takes input typed value (word)
+        document.querySelector(".meanings").innerHTML;
     }    
 });
 
@@ -43,11 +44,14 @@ function data(result, word) {
         
         // loop through each result. and for each result, find div with .meanings, and append result to html. 
         result.forEach(resultItem => {
+
+            meanings = document.querySelector('.meanings');
+            meanings.innerHTML = "";
             
             resultItem.meanings.forEach(meaning => { // notice hierarchy of objects corresponding to API data structure.
                 
                 meaning.definitions.forEach(definition => {
-                    document.querySelector(".meanings").innerHTML += `<span class="meaning">${definition.definition}</span>`;
+                    document.querySelector(".meanings").innerHTML += `<li class="meanings">${definition.definition}</li>`;
                 });
             });
         });

@@ -183,6 +183,13 @@ ul.content::-webkit-scrollbar {
     text-decoration: underline;
 }
 
-.meaning {
-    display: block;
+.meanings-header {
+    font-size: 150%;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
+
+.meanings:last-child {
+    margin-bottom: 2rem;
+}
+
